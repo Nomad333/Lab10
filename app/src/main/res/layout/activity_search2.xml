@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity"
+    android:padding="4dp"
+    android:orientation="vertical">
+
+    <AutoCompleteTextView
+        android:id="@+id/actvBrand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Марка" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Модель" />
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Spinner android:id="@+id/spinnerYearFrom" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" />
+        <Spinner android:id="@+id/spinnerYearTo" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Spinner android:id="@+id/spinnerPriceFrom" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" />
+        <Spinner android:id="@+id/spinnerPriceTo" android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnMatches"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="Matches (0)" />
+
+</LinearLayout>
