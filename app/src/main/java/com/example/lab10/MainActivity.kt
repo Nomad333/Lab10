@@ -32,13 +32,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
-
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
+        setupCars()
+        carAdapter = CarAdapter(allCars)
+        binding.recyclerView.adapter = carAdapter
 
         binding.btnSearch.setOnClickListener {
             val intent = Intent(this, SearchActivity::class.java)
@@ -50,5 +52,13 @@ class MainActivity : AppCompatActivity() {
         binding.btnReset.setOnClickListener {
             carAdapter.updateList(allCars)
         }
+    }
+
+    fun setupCars(){
+        allCars = listOf(
+            Car("Porsche", "911 Turbo S", 2024, "Повнопривідний еталон спорткарів...", "$230,000", R.drawable.porshe),
+            Car("Toyota", "Land Cruiser 300", 2023, "Легендарний позашляховик...", "$95,000", R.drawable.toyota),
+            // ... добавьте остальные 4 машины
+        )
     }
 }
